@@ -23,27 +23,27 @@ const COLORS: Record<PieceType, [string, string]> = {
   S: ['#63e6a4', '#28aa78'], Z: ['#ff6b85', '#d83c65'], J: ['#5b9cff', '#3864d8'], L: ['#ffad61', '#e5773b'],
 };
 
-const gameCanvas = document.querySelector<HTMLCanvasElement>('#game-canvas');
-const holdCanvas = document.querySelector<HTMLCanvasElement>('#hold-canvas');
-const nextCanvas = document.querySelector<HTMLCanvasElement>('#next-canvas');
-const overlay = document.querySelector<HTMLDivElement>('#overlay');
-const overlayKicker = document.querySelector<HTMLSpanElement>('#overlay-kicker');
-const overlayTitle = document.querySelector<HTMLElement>('#overlay-title');
-const overlayCopy = document.querySelector<HTMLSpanElement>('#overlay-copy');
-const overlayButton = document.querySelector<HTMLButtonElement>('#overlay-button');
-const scoreElement = document.querySelector<HTMLElement>('#score');
-const bestElement = document.querySelector<HTMLElement>('#best');
-const levelElement = document.querySelector<HTMLElement>('#level');
-const linesElement = document.querySelector<HTMLElement>('#lines');
-const holdStatus = document.querySelector<HTMLElement>('#hold-status');
+const gameCanvas = document.querySelector<HTMLCanvasElement>('#game-canvas')!;
+const holdCanvas = document.querySelector<HTMLCanvasElement>('#hold-canvas')!;
+const nextCanvas = document.querySelector<HTMLCanvasElement>('#next-canvas')!;
+const overlay = document.querySelector<HTMLDivElement>('#overlay')!;
+const overlayKicker = document.querySelector<HTMLSpanElement>('#overlay-kicker')!;
+const overlayTitle = document.querySelector<HTMLElement>('#overlay-title')!;
+const overlayCopy = document.querySelector<HTMLSpanElement>('#overlay-copy')!;
+const overlayButton = document.querySelector<HTMLButtonElement>('#overlay-button')!;
+const scoreElement = document.querySelector<HTMLElement>('#score')!;
+const bestElement = document.querySelector<HTMLElement>('#best')!;
+const levelElement = document.querySelector<HTMLElement>('#level')!;
+const linesElement = document.querySelector<HTMLElement>('#lines')!;
+const holdStatus = document.querySelector<HTMLElement>('#hold-status')!;
 
 if (!gameCanvas || !holdCanvas || !nextCanvas || !overlay || !overlayKicker || !overlayTitle || !overlayCopy || !overlayButton || !scoreElement || !bestElement || !levelElement || !linesElement || !holdStatus) {
   throw new Error('The game UI is incomplete.');
 }
 
-const context = gameCanvas.getContext('2d');
-const holdContext = holdCanvas.getContext('2d');
-const nextContext = nextCanvas.getContext('2d');
+const context = gameCanvas.getContext('2d')!;
+const holdContext = holdCanvas.getContext('2d')!;
+const nextContext = nextCanvas.getContext('2d')!;
 if (!context || !holdContext || !nextContext) throw new Error('Canvas rendering is unavailable.');
 
 let board = createBoard();
